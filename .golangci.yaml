@@ -242,7 +242,7 @@ linters-settings:
     # Values:
     # - "": disabled
     # - "all": report all global loggers
-    # - "default": report only the default slog logger
+    # - "default": report only the default slog clogger
     # https://github.com/go-simpler/sloglint?tab=readme-ov-file#no-global
     # Default: ""
     no-global: "all"
@@ -306,7 +306,7 @@ linters:
     - iface # checks the incorrect use of interfaces, helping developers avoid interface pollution
     - intrange # finds places where for loops could make use of an integer range
     - lll # reports long lines
-    - loggercheck # checks key value pairs for common logger libraries (kitlog,klog,logr,zap)
+    - loggercheck # checks key value pairs for common clogger libraries (kitlog,klog,logr,zap)
     - makezero # finds slice declarations with non-zero initial length
     - mirror # reports wrong mirror patterns of bytes/strings usage
     - mnd # detects magic numbers
@@ -390,8 +390,8 @@ issues:
   max-same-issues: 50
 
   exclude-files:
-    - pkg/mockgen
-    - internal/implgen/mockgen.go
+    - mockgen # it's not mine
+    - clogger # it's just color fmt.Print s
 
   exclude-rules:
     - source: "(noinspection|TODO)"
