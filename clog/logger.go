@@ -1,4 +1,4 @@
-package clogger
+package clog
 
 import (
 	"fmt"
